@@ -1,3 +1,8 @@
+import data from "./questions.json" assert { type: "json" };
+
+console.log(data);
+//console.log(JSON.parse(questions));
+
 //Create Variables for Language change
 const buttonlabel = "Nächste Frage";
 console.log("test");
@@ -18,7 +23,7 @@ form[0].appendChild(radioboxdiv);
 q1(form, h, radioboxdiv);
 
 //Functions for question
-function q1(form, h) {
+function q1() {
   const content1 = "Der Schwur vom Rütli";
   const content2 = "Der Bundesrat wurde gegründet";
   const content3 = "Wilhelm Tell schoss den Apfel vom Kopf seines Sohnes";
@@ -26,11 +31,11 @@ function q1(form, h) {
 
   h.textContent = "Was geschah der Legende nach am 1. August 1291?";
 
-  fouranswers(radioboxdiv, content1, content2, content3, content4);
+  fouranswers(content1, content2, content3, content4);
   question++;
 }
 
-function q2(form, h) {
+function q2() {
   const content1 = "Der Schwur vom Rütli";
   const content2 = "Der Bundesrat wurde gegründet";
   const content3 = "Wilhelm Tell schoss den Apfel vom Kopf seines Sohnes";
@@ -38,12 +43,12 @@ function q2(form, h) {
 
   h.textContent = "Q2";
 
-  fouranswers(radioboxdiv, content1, content2, content3, content4);
+  fouranswers(content1, content2, content3, content4);
   question++;
 }
 
 //Creates 4 Radioboxes for answers
-function fouranswers(radioboxdiv, content1, content2, content3, content4) {
+function fouranswers(content1, content2, content3, content4) {
   const radio1 = document.createElement("input");
   radio1.setAttribute("type", "radio");
   radio1.setAttribute("id", "answer1");
@@ -85,7 +90,7 @@ function fouranswers(radioboxdiv, content1, content2, content3, content4) {
   radioboxdiv.appendChild(radio3);
   radioboxdiv.appendChild(lable3);
   radioboxdiv.appendChild(document.createElement("br"));
-  radioboxdiv.appendChild(radio1);
+  radioboxdiv.appendChild(radio4);
   radioboxdiv.appendChild(lable4);
   radioboxdiv.appendChild(document.createElement("br"));
 
@@ -96,15 +101,9 @@ function fouranswers(radioboxdiv, content1, content2, content3, content4) {
 }
 
 //Creates 4 Radioboxes for answers
-function fiveanswers(
-  radioboxdiv,
-  content1,
-  content2,
-  content3,
-  content4,
-  content5
-) {
-  fouranswers(radioboxdiv, content1, content2, content3, content4);
+function fiveanswers(content1, content2, content3, content4, content5) {
+  fouranswers(content1, content2, content3, content4);
+
   const radio5 = document.createElement("input");
   radio5.setAttribute("type", "radio");
   radio5.setAttribute("id", "answer5");
@@ -122,12 +121,9 @@ function fiveanswers(
 
 //Create Button
 const button = document.createElement("button");
-//let next = "return " + nextquestion(question) + "(form,h)";
-//console.log(next);
-
-//button.setAttribute("onclick", next);
-button.addEventListener("click", nextquestion);
 form[0].appendChild(button);
+
+button.addEventListener("click", nextquestion);
 
 button.textContent = buttonlabel;
 
