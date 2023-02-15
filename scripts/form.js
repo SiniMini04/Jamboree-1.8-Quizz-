@@ -85,7 +85,7 @@ function fouranswers(radioboxdiv, content1, content2, content3, content4) {
   radioboxdiv.appendChild(radio3);
   radioboxdiv.appendChild(lable3);
   radioboxdiv.appendChild(document.createElement("br"));
-  radioboxdiv.appendChild(radio4);
+  radioboxdiv.appendChild(radio1);
   radioboxdiv.appendChild(lable4);
   radioboxdiv.appendChild(document.createElement("br"));
 
@@ -122,15 +122,15 @@ function fiveanswers(
 
 //Create Button
 const button = document.createElement("button");
-let next = "return " + nextquestion(question) + "(form,h)";
-console.log(next);
-button.setAttribute("onclick", next);
+//let next = "return " + nextquestion(question) + "(form,h)";
+//console.log(next);
+
+//button.setAttribute("onclick", next);
+button.addEventListener("click", nextquestion);
 form[0].appendChild(button);
 
 button.textContent = buttonlabel;
 
-function nextquestion(question) {
-  let out = "q" + question;
-  console.log(out);
-  return out;
+function nextquestion(e) {
+  e.preventDefault();
 }
