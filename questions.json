@@ -1,7 +1,12 @@
 [
   {
-    "question": "",
-    "answer": ["", "", "", "", ""],
+    "question": "Was geschah der Legende nach am 1. August 1291?",
+    "answer": [
+      "Der Schwur vom Rütli",
+      "Der Bundesrat wurde gegründet",
+      "Wilhelm Tell schoss den Apfel vom Kopf seines Sohnes",
+      "Bern wurde zur Landeshauptstadt gewählt"
+    ],
     "right": 1
   },
   {

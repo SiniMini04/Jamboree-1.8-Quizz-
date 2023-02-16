@@ -1,14 +1,7 @@
-import data from "./questions.json" assert { type: "json" };
-
-console.log(data);
-//console.log(JSON.parse(questions));
-
 //Create Variables for Language change
 const buttonlabel = "Nächste Frage";
-console.log("test");
-
 //Create general variables
-let question = 1;
+let question = 0;
 
 //Create Environment for Questions
 const form = document.getElementsByTagName("form");
@@ -18,33 +11,48 @@ const radioboxdiv = document.createElement("div");
 form[0].appendChild(h);
 form[0].appendChild(radioboxdiv);
 
-//Call the first question function
+// Call first Function
+generatequestion();
 
-q1(form, h, radioboxdiv);
+//Functions to get Datas from .json file
+function generatequestion() {
+  fetch("../questions.json")
+    .then((response) => response.json())
+    .then((data) => {
+      makeQuestion(data);
+    })
+    .catch((error) => console.log(error));
+}
 
-//Functions for question
-function q1() {
-  const content1 = "Der Schwur vom Rütli";
-  const content2 = "Der Bundesrat wurde gegründet";
-  const content3 = "Wilhelm Tell schoss den Apfel vom Kopf seines Sohnes";
-  const content4 = "Bern wurde zur Landeshauptstadt gewählt";
+//function to create questions
+function makeQuestion(data) {
+  h.textContent = data[question].question;
 
-  h.textContent = "Was geschah der Legende nach am 1. August 1291?";
+  const content1 = data[question].answer[0];
+  const content2 = data[question].answer[1];
+  const content3 = data[question].answer[2];
+  const content4 = data[question].answer[3];
 
-  fouranswers(content1, content2, content3, content4);
+  if (data[question].answer.length === 5) {
+    const content5 = data[question].answer[4];
+    fiveanswers(content1, content2, content3, content4, content5);
+  } else if (data[question].answer.length === 4) {
+    fouranswers(content1, content2, content3, content4);
+  }
+
   question++;
 }
 
-function q2() {
-  const content1 = "Der Schwur vom Rütli";
-  const content2 = "Der Bundesrat wurde gegründet";
-  const content3 = "Wilhelm Tell schoss den Apfel vom Kopf seines Sohnes";
-  const content4 = "Bern wurde zur Landeshauptstadt gewählt";
+//Create Button
+const button = document.createElement("button");
+form[0].appendChild(button);
 
-  h.textContent = "Q2";
+button.addEventListener("click", nextquestion);
 
-  fouranswers(content1, content2, content3, content4);
-  question++;
+button.textContent = buttonlabel;
+
+function nextquestion(e) {
+  e.preventDefault();
 }
 
 //Creates 4 Radioboxes for answers
@@ -100,7 +108,7 @@ function fouranswers(content1, content2, content3, content4) {
   lable4.textContent = content4;
 }
 
-//Creates 4 Radioboxes for answers
+//Creates 5 Radioboxes for answers
 function fiveanswers(content1, content2, content3, content4, content5) {
   fouranswers(content1, content2, content3, content4);
 
@@ -117,16 +125,4 @@ function fiveanswers(content1, content2, content3, content4, content5) {
   radioboxdiv.appendChild(document.createElement("br"));
 
   lable5.textContent = content5;
-}
-
-//Create Button
-const button = document.createElement("button");
-form[0].appendChild(button);
-
-button.addEventListener("click", nextquestion);
-
-button.textContent = buttonlabel;
-
-function nextquestion(e) {
-  e.preventDefault();
 }
