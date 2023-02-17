@@ -10,8 +10,12 @@
     "right": 1
   },
   {
-    "question": "",
-    "answer": ["", "", "", "", ""],
-    "right": 1
+    "question": "Welches waren die drei Urkantone der Schweiz?",
+    "answer": [
+      "Uri, Schwyz und Bern",
+      "Uri, Schwyz und Luzern",
+      "Uri, Obwalden und Nidwalden"
+    ],
+    "right": 2
   }
 ]

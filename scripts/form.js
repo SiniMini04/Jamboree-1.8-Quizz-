@@ -47,12 +47,17 @@ function makeQuestion(data) {
 const button = document.createElement("button");
 form[0].appendChild(button);
 
-button.addEventListener("click", nextquestion);
-
 button.textContent = buttonlabel;
+
+//When button clicked
+button.addEventListener("click", nextquestion);
 
 function nextquestion(e) {
   e.preventDefault();
+  checkanswer();
+
+  radioboxdiv.innerHTML = "";
+  generatequestion();
 }
 
 //Creates 4 Radioboxes for answers
@@ -102,7 +107,7 @@ function fouranswers(content1, content2, content3, content4) {
   radioboxdiv.appendChild(lable4);
   radioboxdiv.appendChild(document.createElement("br"));
 
-  lable1.textContent = content1;
+  lable1.innerHTML = content1;
   lable2.textContent = content2;
   lable3.textContent = content3;
   lable4.textContent = content4;
@@ -120,9 +125,11 @@ function fiveanswers(content1, content2, content3, content4, content5) {
   const lable5 = document.createElement("label");
   lable5.setAttribute("for", "answer5");
 
-  radioboxdiv.appendChild(radio5);
-  radioboxdiv.appendChild(lable5);
-  radioboxdiv.appendChild(document.createElement("br"));
+  if (question === 0) {
+    radioboxdiv.appendChild(radio5);
+    radioboxdiv.appendChild(lable5);
+    radioboxdiv.appendChild(document.createElement("br"));
+  }
 
   lable5.textContent = content5;
 }
