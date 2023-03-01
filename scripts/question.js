@@ -12,17 +12,18 @@ async function getanswerdata(question) {
     .catch((error) => console.log(error));
 }
 
+//Check Radioboxes if checked matches with right answer
 function checkanswer(data, question) {
   const rightanswer = data[question].right;
   let answers = [];
 
-  let radiobutton = document.querySelectorAll("input");
-  console.log(radiobutton.length);
-
-  /*for (let i = 1; i <= data[question].answer.length; i++) {
-    let checkbox = document.getElementById("answer1");
-    console.log(checkbox);
+  for (let i = 1; i <= data[question].answer.length; i++) {
+    let answer = "answer" + i;
+    let checkbox = document.getElementById(answer);
     answers.push(checkbox.checked);
-    console.log(answers[i - 1]);
-  }*/
+  }
+
+  if (answers[rightanswer - 1]) {
+    points++;
+  }
 }
