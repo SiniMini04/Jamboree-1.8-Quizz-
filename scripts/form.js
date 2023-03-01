@@ -54,10 +54,10 @@ button.addEventListener("click", nextquestion);
 
 function nextquestion(e) {
   e.preventDefault();
-  checkanswer();
-
-  radioboxdiv.innerHTML = "";
-  generatequestion();
+  getanswerdata(question).finally(() => {
+    radioboxdiv.innerHTML = "";
+    generatequestion();
+  });
 }
 
 //Creates 4 Radioboxes for answers
