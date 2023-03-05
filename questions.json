@@ -18,5 +18,10 @@
       "Uri, Obwalden und Nidwalden"
     ],
     "right": 2
+  },
+  {
+    "question": "END",
+    "answer": [],
+    "right": 0
   }
 ]

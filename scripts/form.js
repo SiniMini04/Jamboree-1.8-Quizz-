@@ -1,7 +1,9 @@
 //Create Variables for Language change
 const buttonlabel = "Nächste Frage";
+
 //Create general variables
 let question = 0;
+const winpercentage = 0.9;
 
 //Create Environment for Questions
 const form = document.getElementsByTagName("form");
@@ -26,27 +28,40 @@ function generatequestion() {
 
 //function to create questions
 function makeQuestion(data) {
-  h.textContent = data[question].question;
+  if (data[question].question === "END") {
+    console.log("Ende");
 
-  const content1 = data[question].answer[0];
-  const content2 = data[question].answer[1];
-  const content3 = data[question].answer[2];
-  const content4 = data[question].answer[3];
+    const pointstowin = (data.length - 1) * winpercentage;
 
-  if (data[question].answer.length === 5) {
-    const content5 = data[question].answer[4];
-    fiveanswers(content1, content2, content3, content4, content5);
-  } else if (data[question].answer.length === 4) {
-    fouranswers(content1, content2, content3, content4);
+    form[0].removeChild(button);
+
+    if (points >= pointstowin) {
+      winpage();
+    } else {
+      loosepage();
+    }
+  } else {
+    h.textContent = data[question].question;
+
+    const content1 = data[question].answer[0];
+    const content2 = data[question].answer[1];
+    const content3 = data[question].answer[2];
+    const content4 = data[question].answer[3];
+
+    if (data[question].answer.length === 5) {
+      const content5 = data[question].answer[4];
+      fiveanswers(content1, content2, content3, content4, content5);
+    } else if (data[question].answer.length === 4) {
+      fouranswers(content1, content2, content3, content4);
+    }
+
+    question++;
   }
-
-  question++;
 }
 
 //Create Button
 const button = document.createElement("button");
 form[0].appendChild(button);
-
 button.textContent = buttonlabel;
 
 //When button clicked
