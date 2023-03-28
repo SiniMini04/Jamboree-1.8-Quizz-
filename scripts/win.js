@@ -17,6 +17,7 @@ function winpage() {
   form[0].appendChild(p);
 
   const wincode = generatewincode(lengthwincode);
+  writeindb(wincode);
 
   h2[0].textContent = "Du hast gewonnen!!!";
   h3.textContent = wincode;
@@ -37,4 +38,32 @@ function generatewincode(n) {
     );
   }
   return randomString;
+}
+
+//Write randomcode into DB
+function writeindb(wincode) {
+  const url =
+    "https://eu-central-1.aws.data.mongodb-api.com/app/data-vmeje/endpoint/data/v1";
+
+  const data = {
+    dataSource: "Test",
+    database: "1AugustApp",
+    collection: "Codes",
+    document: {
+      code: wincode,
+    },
+  };
+
+  const response = fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "no-cors", // no-cors, *cors, same-origin
+    headers: {
+      apiKey: apiKey,
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Request-Headers": "*",
+    },
+    redirect: "follow", // manual, *follow, error
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
 }
