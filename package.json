@@ -1,0 +1,23 @@
+{
+  "name": "jamboree-1.8-quizz-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiniMini04/Jamboree-1.8-Quizz-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiniMini04/Jamboree-1.8-Quizz-/issues"
+  },
+  "homepage": "https://github.com/SiniMini04/Jamboree-1.8-Quizz-#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.2.0"
+  }
+}
