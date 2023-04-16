@@ -39,6 +39,3 @@ function generatewincode(n) {
   }
   return randomString;
 }
-
-//Write randomcode into DB
-function writeindb(wincode) {}
