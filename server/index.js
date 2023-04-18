@@ -1,3 +1,23 @@
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+app.use(
+  cors({
+    //TODO: Change when upload to server
+    origin: "*",
+  })
+);
+app.use(express.json({ limit: "5mb" })); //sets data limit of parsing in body to 50mb //to manage the parsing of the body from react app
+app.use(express.urlencoded({ limit: "5mb" })); //sets data limit of parsing in url to 50mb
+
+app.post("/writeToDb", (req, res) => {
+  writeindb(req.body.code);
+  res.send({
+    code: req.body.code,
+  });
+});
+
 async function writeindb(wincode) {
   const { MongoClient } = require("mongodb");
 
@@ -17,4 +37,7 @@ async function writeindb(wincode) {
     await client.close();
   }
 }
-run().catch(console.dir);
+
+const listener = app.listen("3001", () => {
+  console.log("Server started at port " + listener.address().port);
+});

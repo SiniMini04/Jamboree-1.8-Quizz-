@@ -17,7 +17,15 @@ function winpage() {
   form[0].appendChild(p);
 
   const wincode = generatewincode(lengthwincode);
-  writeindb(wincode);
+
+  fetch("http://127.0.0.1:3001/writeToDb", {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "post",
+    mode: "cors",
+    body: JSON.stringify({ code: wincode }),
+  }).then((doc) => console.log(doc));
 
   h2[0].textContent = "Du hast gewonnen!!!";
   h3.textContent = wincode;
