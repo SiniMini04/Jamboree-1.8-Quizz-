@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+header {
+  background-color: #ffffff;
+  background-image: url("http://www.jamboree.ch/2023/wp-content/uploads/2022/04/Bild-Header-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
+}
+
+nav {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px 60px 5px 20px;
+  float: none;
+}
+
+nav ul {
+  display: block;
+  min-height: 20px;
+}
+
+nav ul li {
+  padding: 5px 50px 5px 50px;
+  list-style: none;
+  float: right;
+}
+
+h2 {
+}
+
+#radioboxdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+}
