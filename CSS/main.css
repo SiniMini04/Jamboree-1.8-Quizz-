@@ -43,8 +43,16 @@ form h2 {
   width: 100%;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 #radioboxdiv {
-  margin-left: 5vws;
   display: block;
   margin: auto;
   text-align: left;
@@ -59,7 +67,7 @@ button {
   background-color: #cc7e4d;
   color: #ffffff;
   border-color: #ffffff;
-  font-family: "Comfortaa", Sans-serif;
+  font-family: "Comfortaa", sans-serif;
   font-size: 0.9em;
   font-weight: 600;
   text-transform: uppercase;
@@ -71,4 +79,46 @@ button {
   padding: 15px 45px 15px 45px;
   margin-top: 20px;
   white-space: nowrap;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem ;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  min-height: 202px;
+  text-align: left;
+}
+footer a{
+  color:white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: none;
+  hyphens: manual;
+}
+footer a:last-child{
+  font-weight: 200;
+  font-size: 15px;
+}
+footer ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+footer ul li{
+  padding-right:4vmin;
+}
+footer svg{
+  height: 25px;
+  width: 25px;
 }
