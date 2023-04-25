@@ -11,8 +11,8 @@ const h = document.createElement("h2");
 const radioboxdiv = document.createElement("div");
 radioboxdiv.setAttribute("id", "radioboxdiv");
 
-form[0].appendChild(h);
-form[0].appendChild(radioboxdiv);
+form[0].insertBefore(h, document.getElementById("div"));
+document.getElementById("div").appendChild(radioboxdiv);
 
 // Call first Function
 generatequestion();

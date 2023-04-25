@@ -33,11 +33,42 @@ nav ul li {
 h2 {
 }
 
-#radioboxdiv {
+#div {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  padding: auto;
+}
+
+form h2 {
+  width: 100%;
+}
+
+#radioboxdiv {
+  margin-left: 5vws;
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+
+#radioboxdiv input[type="radio"] {
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 button {
+  background-color: #cc7e4d;
+  color: #ffffff;
+  border-color: #ffffff;
+  font-family: "Comfortaa", Sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1.8px;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 50px 50px 50px 50px;
+  padding: 15px 45px 15px 45px;
+  margin-top: 20px;
+  white-space: nowrap;
 }
