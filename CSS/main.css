@@ -8,9 +8,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 250px;
-}
-
-nav {
+} nav {
   background-color: transparent;
   background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
   background-repeat: no-repeat;
@@ -18,69 +16,39 @@ nav {
   padding: 5px 60px 5px 20px;
   float: none;
 }
-
 nav ul {
   display: block;
   min-height: 20px;
 }
-
 nav ul li {
   padding: 5px 50px 5px 50px;
   list-style: none;
   float: right;
 }
-
-h2 {
-}
-
 #div {
   display: flex;
   align-items: center;
   padding: auto;
 }
-
 form h2 {
   width: 100%;
 }
-
 #page-container {
   position: relative;
   min-height: 100vh;
 }
-
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
-
 #radioboxdiv {
   display: block;
   margin: auto;
   text-align: left;
 }
-
 #radioboxdiv input[type="radio"] {
   margin-left: 3vw;
   margin-right: 3vw;
 }
-
-button {
-  background-color: #cc7e4d;
-  color: #ffffff;
-  border-color: #ffffff;
-  font-family: "Comfortaa", sans-serif;
-  font-size: 0.9em;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 18px;
-  letter-spacing: 1.8px;
-  border-style: solid;
-  border-width: 2px 2px 2px 2px;
-  border-radius: 50px 50px 50px 50px;
-  padding: 15px 45px 15px 45px;
-  margin-top: 20px;
-  white-space: nowrap;
-}
-
 footer{
   display: flex;
   flex-direction: column;
@@ -95,7 +63,7 @@ footer{
   position: absolute;
   bottom: 0;
   width: 100vw;
-  min-height: 202px;
+  min-height: 150px;
   text-align: left;
 }
 footer a{
@@ -121,4 +89,34 @@ footer ul li{
 footer svg{
   height: 25px;
   width: 25px;
+}
+form button{
+  width:50%;
+  background-color: #cc7e4d;
+  color: #ffffff;
+  border-color: #ffffff;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1.8px;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 50px 50px 50px 50px;
+  padding: 15px 45px 15px 45px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+form button:hover{
+  animation: linear 250ms button;
+  background: white;
+  color: #cc7e4d;
+  border: solid 3px #cc7e4d;
+}
+
+@keyframes button {
+  50%{
+    width: 40%;
+  }
 }
