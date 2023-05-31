@@ -34,7 +34,6 @@ function makeQuestion(data) {
 
     const pointstowin = (data.length - 1) * winpercentage;
 
-    form[0].removeChild(button);
 
     if (points >= pointstowin) {
       winpage();
@@ -55,21 +54,21 @@ function makeQuestion(data) {
     } else if (data[question].answer.length === 4) {
       fouranswers(content1, content2, content3, content4);
     }
+    //Create Button
+    const button = document.createElement("button");
+    button.textContent = buttonlabel;
+    form[0].appendChild(button);
+
+//When button clicked
+    button.addEventListener("click", nextquestion);
 
     question++;
   }
 }
 
-//Create Button
-const button = document.createElement("button");
-form[0].appendChild(button);
-button.textContent = buttonlabel;
-
-//When button clicked
-button.addEventListener("click", nextquestion);
-
 function nextquestion(e) {
   e.preventDefault();
+  e.target.remove()
   getanswerdata(question).finally(() => {
     radioboxdiv.innerHTML = "";
     generatequestion();
