@@ -1,5 +1,5 @@
 //Create Variables for Language change
-const buttonlabel = "Nächste Frage";
+let buttonlabel = "Nächste Frage";
 
 //Create general variables
 let question = 0;
@@ -19,7 +19,7 @@ generatequestion();
 
 //Functions to get Datas from .json file
 function generatequestion() {
-  fetch("../questions.json")
+  fetch(url())
     .then((response) => response.json())
     .then((data) => {
       makeQuestion(data);
@@ -56,6 +56,21 @@ function makeQuestion(data) {
     }
     //Create Button
     const button = document.createElement("button");
+    button.setAttribute('id', 'nextBTN')
+    switch (lang){
+      case "it":
+        buttonlabel = "Prossima domanda"
+        break
+      case "fr":
+        buttonlabel = "Question suivante"
+        break
+      case "en":
+        buttonlabel = "Next question"
+        break
+      default: //de
+        buttonlabel = "Nächste Frage"
+        break
+    }
     button.textContent = buttonlabel;
     form[0].appendChild(button);
 
@@ -81,6 +96,7 @@ function fouranswers(content1, content2, content3, content4) {
   radio1.setAttribute("type", "radio");
   radio1.setAttribute("id", "answer1");
   radio1.setAttribute("name", "response");
+  radio1.setAttribute("checked", true)
 
   const radio2 = document.createElement("input");
   radio2.setAttribute("type", "radio");
