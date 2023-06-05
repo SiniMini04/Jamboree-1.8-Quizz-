@@ -1,14 +1,19 @@
 body {
   margin: 0;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 header {
   background-color: #ffffff;
   background-image: url("http://www.jamboree.ch/2023/wp-content/uploads/2022/04/Bild-Header-1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 250px;
-} nav {
+  min-height: 50px;
+  background-position: center;
+}
+nav {
   background-color: transparent;
   background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
   background-repeat: no-repeat;
@@ -35,7 +40,8 @@ form h2 {
 }
 #page-container {
   position: relative;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  padding: 2vmin;
 }
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
@@ -50,21 +56,26 @@ form h2 {
   margin-right: 3vw;
 }
 footer{
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly;*/
   padding: 2rem ;
+  margin-top: auto;
   margin-right: auto;
   margin-left: auto;
   background-color: transparent;
   background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
-  width: 100vw;
-  min-height: 150px;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100px;
   text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  word-break: break-word;
 }
 footer a{
   color:white;
@@ -118,5 +129,32 @@ form button:hover{
 @keyframes button {
   50%{
     width: 40%;
+  }
+}
+
+@media (max-width:470px) {
+  footer{
+    word-break: break-word;
+    padding: 0;
+    width: 100vw;
+    margin: 0;
+    bottom: 0;
+    height: 200px
+  }
+  footer div{
+    padding: 2vmax;
+  }
+  nav{
+    position: relative;
+  }
+  nav ul{
+    display: grid;
+  }
+  #page-container{
+    padding: 3vmax;
+    height: calc(100vh - 200px);
+  }
+  form button{
+    width: auto;
   }
 }

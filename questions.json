@@ -1,6 +1,6 @@
 [
   {
-    "question": "Was geschah der Legende nach am 1. August 1291?",
+    "question": "Was geschah der Legende nach am 1. August?",
     "answer": [
       "Der Schwur vom Rütli",
       "Der Bundesrat wurde gegründet",
@@ -8,6 +8,21 @@
       "Bern wurde zur Landeshauptstadt gewählt"
     ],
     "right": 1
+  },
+  {
+    "question": "In welchem Jahr war der Rütli Schwur?",
+    "answer": ["1219", "1281", "1291", "1305"],
+    "right": 3
+  },
+  {
+    "question": "Welcher der vier Personen war nicht beim Rütlischwur dabei?",
+    "answer": [
+      "Werner Stauffacher",
+      "Wilhelm Tell",
+      "Walter Fürst",
+      "Arnold von Melchtal"
+    ],
+    "right": 2
   },
   {
     "question": "Welches waren die drei Urkantone der Schweiz?",
@@ -18,6 +33,51 @@
       "Uri, Obwalden und Nidwalden"
     ],
     "right": 2
+  },
+  {
+    "question": "In welchem Kanton liegt das Rütli?",
+    "answer": ["Uri", "Nidwalden", "Schwyz", "Luzern"],
+    "right": 1
+  },
+  {
+    "question": "Seit wann gilt der 1. August als Schweizer Nationalfeiertag?",
+    "answer": ["1291", "1612", "1848", "1891", "1899"],
+    "right": 4
+  },
+  {
+    "question": "Seit wann ist der «Schweizerpsalm» die offizielle Nationalhymne der Schweiz?",
+    "answer": ["1291", "1848", "1852", "1891", "1991"],
+    "right": 5
+  },
+  {
+    "question": "Wieviele Strophen hat der Schweizerpsalm?",
+    "answer": ["2", "3", "4", "5", "6"],
+    "right": 3
+  },
+  {
+    "question": "Welcher Staat hat am 1. August ebenfalls seinen Nationalfeiertag?",
+    "answer": ["China", "Peru", "USA", "Nepal", "Benin"],
+    "right": 5
+  },
+  {
+    "question": "Die Schweizerfahne ist ein Sonderfall, da sie quadratisch ist. Welcher andere Staat auf der Welt hat das selbe Fahnen Format?",
+    "answer": ["Sudan", "Quatar", "Vatikan", "Nepal", "Gahna"],
+    "right": 3
+  },
+  {
+    "question": "Wieviele Seen hat die Schweiz?",
+    "answer": ["1500", "2500", "3500", "4500"],
+    "right": 1
+  },
+  {
+    "question": "Wieviele Berge hat die Schweiz, die höher als 4000 Meter sind?",
+    "answer": ["43", "45", "48", "52"],
+    "right": 3
+  },
+  {
+    "question": "Wieviel Prozent der Schweizer gesamtfläche liegt über 2000 m.Ü.M?",
+    "answer": ["7%", "14%", "18%", "23%"],
+    "right": 4
   },
   {
     "question": "END",
