@@ -27,12 +27,32 @@ function winpage() {
     body: JSON.stringify({ code: wincode }),
   }).then((doc) => console.log(doc));
 
-  h2[0].textContent = "Du hast gewonnen!!!";
-  h3.textContent = wincode;
-  h4.textContent =
-    "Mach einen Screenshot von diesem Code oder notiere ihn. Damit kannst du während des ganzen Jamborees einen kleinen Preis im schweizer Delegationszelt holen;)";
-  p.textContent =
-    "Das Swiss Contingent wünscht dir noch einen schönen 1. August";
+
+  switch (lang){ //TODO set winpage
+    case "it":
+      h2[0].textContent = "Du hast gewonnen!!!";
+      h3.textContent = wincode;
+      h4.textContent = "Mach einen Screenshot von diesem Code oder notiere ihn. Damit kannst du während des ganzen Jamborees einen kleinen Preis im schweizer Delegationszelt holen;)";
+      p.textContent = "Das Swiss Contingent wünscht dir noch einen schönen 1. August";
+      break
+    case "fr":
+      h2[0].textContent = "Du hast gewonnen!!!";
+      h3.textContent = wincode;
+      h4.textContent = "Mach einen Screenshot von diesem Code oder notiere ihn. Damit kannst du während des ganzen Jamborees einen kleinen Preis im schweizer Delegationszelt holen;)";
+      p.textContent = "Das Swiss Contingent wünscht dir noch einen schönen 1. August";
+      break
+    case "en":
+      h2[0].textContent = "Du hast gewonnen!!!";
+      h3.textContent = wincode;
+      h4.textContent = "Mach einen Screenshot von diesem Code oder notiere ihn. Damit kannst du während des ganzen Jamborees einen kleinen Preis im schweizer Delegationszelt holen;)";
+      p.textContent = "Das Swiss Contingent wünscht dir noch einen schönen 1. August";
+      break
+    default: //de
+      h2[0].textContent = "Du hast gewonnen!!!";
+      h3.textContent = wincode;
+      h4.textContent = "Mach einen Screenshot von diesem Code oder notiere ihn. Damit kannst du während des ganzen Jamborees einen kleinen Preis im schweizer Delegationszelt holen;)";
+      p.textContent = "Das Swiss Contingent wünscht dir noch einen schönen 1. August";
+  }
 }
 
 //Generate wincode

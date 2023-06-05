@@ -11,8 +11,25 @@ function loosepage() {
   form[0].appendChild(br);
   form[0].appendChild(p);
 
-  h2[0].textContent = "Du hast verloren!!!";
-  h3.textContent = "Leider hast du nichts gewonnen:(";
-  p.textContent =
-    "Das Swiss Contingent wünscht dir trotzdem noch einen schönen 1. August";
+  switch (lang){ //TODO set loose page
+    case "it":
+      h2[0].textContent = "Du hast verloren!!!";
+      h3.textContent = "Leider hast du nichts gewonnen:(";
+      p.textContent = "Das Swiss Contingent wünscht dir trotzdem noch einen schönen 1. August";
+      break
+    case "fr":
+      h2[0].textContent = "Du hast verloren!!!";
+      h3.textContent = "Leider hast du nichts gewonnen:(";
+      p.textContent = "Das Swiss Contingent wünscht dir trotzdem noch einen schönen 1. August";
+      break
+    case "en":
+      h2[0].textContent = "Du hast verloren!!!";
+      h3.textContent = "Leider hast du nichts gewonnen:(";
+      p.textContent = "Das Swiss Contingent wünscht dir trotzdem noch einen schönen 1. August";
+      break
+    default: //de
+      h2[0].textContent = "Du hast verloren!!!";
+      h3.textContent = "Leider hast du nichts gewonnen:(";
+      p.textContent = "Das Swiss Contingent wünscht dir trotzdem noch einen schönen 1. August";
+  }
 }
