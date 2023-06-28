@@ -47,7 +47,7 @@ function makeQuestion(data) {
     const content2 = data[question].answer[1];
     const content3 = data[question].answer[2];
     const content4 = data[question].answer[3];
-
+    //console.log(data[question].answer.length);
     if (data[question].answer.length === 5) {
       const content5 = data[question].answer[4];
       fiveanswers(content1, content2, content3, content4, content5);
@@ -156,11 +156,12 @@ function fiveanswers(content1, content2, content3, content4, content5) {
   const lable5 = document.createElement("label");
   lable5.setAttribute("for", "answer5");
 
-  if (question === 0) {
+  //console.log(question)
+  //if (question === 0) {
     radioboxdiv.appendChild(radio5);
     radioboxdiv.appendChild(lable5);
     radioboxdiv.appendChild(document.createElement("br"));
-  }
+  //}
 
   lable5.textContent = content5;
 }

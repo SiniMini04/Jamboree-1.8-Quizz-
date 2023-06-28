@@ -18,7 +18,7 @@ function winpage() {
 
   const wincode = generatewincode(lengthwincode);
 
-  fetch("http://127.0.0.1:3001/writeToDb", {
+  fetch("/writeToDb", {
     headers: {
       "Content-Type": "application/json",
     },

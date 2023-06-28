@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(
@@ -10,7 +11,7 @@ app.use(
 );
 app.use(express.json({ limit: "5mb" })); //sets data limit of parsing in body to 50mb //to manage the parsing of the body from react app
 app.use(express.urlencoded({ limit: "5mb" })); //sets data limit of parsing in url to 50mb
-
+app.use(express.static(path.join(__dirname, 'site')));
 app.post("/writeToDb", (req, res) => {
   writeindb(req.body.code);
   res.send({
