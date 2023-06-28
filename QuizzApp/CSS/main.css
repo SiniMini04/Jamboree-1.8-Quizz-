@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: #ffffff;
+  background-image: url("http://www.jamboree.ch/2023/wp-content/uploads/2022/04/Bild-Header-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50px;
+  background-position: center;
+}
+nav {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px 60px 5px 20px;
+  float: none;
+}
+nav ul {
+  display: block;
+  min-height: 20px;
+}
+nav ul li {
+  padding: 5px 50px 5px 50px;
+  list-style: none;
+  float: right;
+}
+#div {
+  display: flex;
+  align-items: center;
+  padding: auto;
+}
+form h2 {
+  width: 100%;
+}
+#page-container {
+  position: relative;
+  /*min-height: 100vh;*/
+  padding: 2vmin;
+}
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+#radioboxdiv {
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+#radioboxdiv input[type="radio"] {
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+footer{
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;*/
+  padding: 2rem ;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #237911 0%, #19a400 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100px;
+  text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  word-break: break-word;
+}
+footer a{
+  color:white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: none;
+  hyphens: manual;
+}
+footer a:last-child{
+  font-weight: 200;
+  font-size: 15px;
+}
+footer ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+footer ul li{
+  padding-right:4vmin;
+}
+footer svg{
+  height: 25px;
+  width: 25px;
+}
+form button{
+  width:50%;
+  background-color: #cc7e4d;
+  color: #ffffff;
+  border-color: #ffffff;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1.8px;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 50px 50px 50px 50px;
+  padding: 15px 45px 15px 45px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+form button:hover{
+  animation: linear 250ms button;
+  background: white;
+  color: #cc7e4d;
+  border: solid 3px #cc7e4d;
+}
+
+@keyframes button {
+  50%{
+    width: 40%;
+  }
+}
+
+@media (max-width:470px) {
+  footer{
+    word-break: break-word;
+    padding: 0;
+    width: 100vw;
+    margin: 0;
+    bottom: 0;
+    height: 200px
+  }
+  footer div{
+    padding: 2vmax;
+  }
+  nav{
+    position: relative;
+  }
+  nav ul{
+    display: grid;
+  }
+  #page-container{
+    padding: 3vmax;
+    height: calc(100vh - 200px);
+  }
+  form button{
+    width: auto;
+  }
+}
