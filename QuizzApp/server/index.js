@@ -39,6 +39,6 @@ async function writeindb(wincode) {
   }
 }
 
-const listener = app.listen("3001", () => {
+const listener = app.listen("3000", () => {
   console.log("Server started at port " + listener.address().port);
 });
