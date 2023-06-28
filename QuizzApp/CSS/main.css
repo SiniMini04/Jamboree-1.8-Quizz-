@@ -12,6 +12,7 @@ header {
   background-size: cover;
   min-height: 50px;
   background-position: center;
+  height: 15vh;
 }
 nav {
   background-color: transparent;
