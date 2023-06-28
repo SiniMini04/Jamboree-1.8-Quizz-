@@ -1,0 +1,93 @@
+[
+  {
+    "question": "Que s'est-il passé, selon la légende, le 1er août ?",
+    "answer": [
+      "Le Serment du Grütli a eu lieu",
+      "Le Conseil fédéral fut créé",
+      "Guillaume Tell a tiré la pomme de la tête de son fils",
+      "Berne fut élue capitale du pays"
+    ],
+    "right": 1
+  },
+  {
+    "question": "En quelle année a eu lieu le Serment du Grütli ?",
+    "answer": ["En 1219", "En 1281", "En 1291", "En 1305"],
+    "right": 3
+  },
+  {
+    "question": "Laquelle de ces quatre personnes n'était pas présente lors du Serment du Grütli ?",
+    "answer": [
+      "Werner Stauffacher",
+      "Guillaume Tell",
+      "Walter Fürst",
+      "Arnold de Melchtal"
+    ],
+    "right": 2
+  },
+  {
+    "question": "Quels étaient les trois cantons primitifs de la Suisse ?",
+    "answer": [
+      "Uri, Schwyz et Berne",
+      "Uri, Schwyz et Unterwald",
+      "Uri, Schwyz et Lucerne",
+      "Uri, Obwald et Nidwald"
+    ],
+    "right": 2
+  },
+  {
+    "question": "Dans quel canton se trouve le Grütli ?",
+    "answer": ["Uri", "Nidwald", "Schwyz", "Lucerne"],
+    "right": 1
+  },
+  {
+    "question": "Depuis quand le 1er août est-il considéré comme la Fête nationale suisse ?",
+    "answer": ["1291", "1612", "1848", "1891", "1899"],
+    "right": 4
+  },
+  {
+    "question": "Depuis quand le \"Cantique suisse\" est-il officiellement l'hymne national de la Suisse ?",
+    "answer": ["1291", "1848", "1852", "1891", "1991"],
+    "right": 5
+  },
+  {
+    "question": "Combien de strophes le Cantique suisse compte-t-il ?",
+    "answer": ["2", "3", "4", "5", "6"],
+    "right": 3
+  },
+  {
+    "question": "Quel pays célèbre également sa fête nationale le 1er août ?",
+    "answer": [
+      "La Chine",
+      "Le Pérou",
+      "Les États-Unis",
+      "Le Népal",
+      "Le Bénin"
+    ],
+    "right": 5
+  },
+  {
+    "question": "Le drapeau suisse est un cas particulier puisqu'il est carré. Quel autre pays dans le monde a le même format de drapeau ?",
+    "answer": ["Le Soudan", "Le Qatar", "Le Vatican", "Le Népal", "Le Ghana"],
+    "right": 3
+  },
+  {
+    "question": "Combien de lacs y a-t-il en Suisse ?",
+    "answer": ["1500", "2500", "3500", "4500"],
+    "right": 1
+  },
+  {
+    "question": "Combien de sommets en Suisse dépassent les 4000 mètres ?",
+    "answer": ["43", "45", "48", "52"],
+    "right": 3
+  },
+  {
+    "question": "Quel pourcentage de la superficie totale de la Suisse se situe au-dessus de 2000 mètres d'altitude ?",
+    "answer": ["7%", "14%", "18%", "23%"],
+    "right": 4
+  },
+  {
+    "question": "END",
+    "answer": [],
+    "right": 0
+  }
+]

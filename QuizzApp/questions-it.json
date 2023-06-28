@@ -1,0 +1,87 @@
+[
+  {
+    "question": "Secondo la leggenda, che cosa accadde il 1° agosto?",
+    "answer": [
+      "Il giuramento del Rütli",
+      "La fondazione del Consiglio federale",
+      "Guglielmo Tell sparò la mela dalla testa di suo figlio",
+      "Berna fu eletta capitale della Svizzera"
+    ],
+    "right": 1
+  },
+  {
+    "question": "In quale anno avvenne il giuramento del Rütli?",
+    "answer": ["1219", "1281", "1291", "1305"],
+    "right": 3
+  },
+  {
+    "question": "Quale delle quattro persone non fu presente al giuramento del Rütli?",
+    "answer": [
+      "Werner Stauffacher",
+      "Guglielmo Tell",
+      "Walter Principe",
+      "Arnold di Melchtal"
+    ],
+    "right": 2
+  },
+  {
+    "question": "Quali erano i tre cantoni originari della Svizzera?",
+    "answer": [
+      "Uri, Svitto e Berna",
+      "Uri, Svitto e Untervaldo",
+      "Uri, Svitto e Lucerna",
+      "Uri, Obvaldo e Nidvaldo"
+    ],
+    "right": 2
+  },
+  {
+    "question": "In quale cantone si trova il Rütli?",
+    "answer": ["Uri", "Nidvaldo", "Svitto", "Lucerna"],
+    "right": 1
+  },
+  {
+    "question": "Da quando il 1° agosto è un giorno festivo in Svizzera?",
+    "answer": ["1291", "1612", "1848", "1891", "1899"],
+    "right": 4
+  },
+  {
+    "question": "Da quando il Salmo svizzero è l'inno nazionale ufficiale della Svizzera?",
+    "answer": ["1291", "1848", "1852", "1891", "1991"],
+    "right": 5
+  },
+  {
+    "question": "Quante strofe ha il Salmo svizzero?",
+    "answer": ["2", "3", "4", "5", "6"],
+    "right": 3
+  },
+  {
+    "question": "In quale altro paese il 1° agosto è un giorno festivo?",
+    "answer": ["Cina", "Perù", "Stati Uniti", "Nepal", "Benin"],
+    "right": 5
+  },
+  {
+    "question": "La bandiera svizzera è particolare perché è quadrata. La bandiera di quale altro paese al mondo ha la stessa forma?",
+    "answer": ["Sudan", "Qatar", "Vaticano", "Nepal", "Ghana"],
+    "right": 3
+  },
+  {
+    "question": "Quanti laghi ci sono in Svizzera?",
+    "answer": ["1500", "2500", "3500", "4500"],
+    "right": 1
+  },
+  {
+    "question": "Quante montagne più alte di 4000 metri ci sono Svizzera?",
+    "answer": ["43", "45", "48", "52"],
+    "right": 3
+  },
+  {
+    "question": "Quale percentuale della superficie totale della Svizzera si trova al di sopra dei 2000 metri sul livello del mare?",
+    "answer": ["7%", "14%", "18%", "23%"],
+    "right": 4
+  },
+  {
+    "question": "END",
+    "answer": [],
+    "right": 0
+  }
+]

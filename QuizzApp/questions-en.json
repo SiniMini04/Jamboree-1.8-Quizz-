@@ -1,0 +1,87 @@
+[
+  {
+    "question": "According to legend, what happened on 1 August?",
+    "answer": [
+      "The oath on the Rütli meadow",
+      "The Federal Council was founded.",
+      "William Tell shot an apple off his son's head.",
+      "Bern was elected capital of the country."
+    ],
+    "right": 1
+  },
+  {
+    "question": "In which year was the Rütli Oath?",
+    "answer": ["1219", "1281", "1291", "1305"],
+    "right": 3
+  },
+  {
+    "question": "Which of the following four people was not present at the Rütli Oath?",
+    "answer": [
+      "Werner Stauffacher",
+      "William Tell",
+      "Walter Prince",
+      "Arnold of Melchtal"
+    ],
+    "right": 2
+  },
+  {
+    "question": "Which were the three original cantons of Switzerland?",
+    "answer": [
+      "Uri, Schwyz and Bern",
+      "Uri, Schwyz and Unterwalden",
+      "Uri, Schwyz and Lucerne",
+      "Uri, Obwalden and Nidwalden"
+    ],
+    "right": 2
+  },
+  {
+    "question": "In which canton is the Rütli meadow located?",
+    "answer": ["Uri", "Nidwalden", "Schwyz", "Lucerne"],
+    "right": 1
+  },
+  {
+    "question": "Since when has 1 August been a Swiss bank holiday?",
+    "answer": ["1291", "1612", "1848", "1891", "1899"],
+    "right": 4
+  },
+  {
+    "question": "Since when has the Swiss Psalm been the official national anthem of Switzerland?",
+    "answer": ["1291", "1848", "1852", "1891", "1991"],
+    "right": 5
+  },
+  {
+    "question": "How many stanzas does the Swiss Psalm have?",
+    "answer": ["2", "3", "4", "5", "6"],
+    "right": 3
+  },
+  {
+    "question": "Which country also has its bank holiday on 1 August?",
+    "answer": ["China", "Peru", "USA", "Nepal", "Benin"],
+    "right": 5
+  },
+  {
+    "question": "The Swiss flag is a special case because it is square-shaped. Which other country in the world has the same flag format?",
+    "answer": ["Sudan", "Qatar", "Vatican", "Nepal", "Ghana"],
+    "right": 3
+  },
+  {
+    "question": "How many lakes does Switzerland have?",
+    "answer": ["1,500", "2,500", "3,500", "4,500"],
+    "right": 1
+  },
+  {
+    "question": "How many mountains does Switzerland have that are higher than 4,000 meters?",
+    "answer": ["43", "45", "48", "52"],
+    "right": 3
+  },
+  {
+    "question": "What percentage of Switzerland's total area is higher than 2,000 meters above sea level?",
+    "answer": ["7%", "14%", "18%", "23%"],
+    "right": 4
+  },
+  {
+    "question": "END",
+    "answer": [],
+    "right": 0
+  }
+]
