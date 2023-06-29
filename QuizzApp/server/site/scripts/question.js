@@ -24,13 +24,13 @@ function changeLang(sprache){
 function url(){
   switch (lang){
     case "it":
-      return "../questions.json" //TODO set jsons
+      return "./json/questions-it.json" //TODO set jsons
     case "fr":
-      return "../questions.json"
+      return "./json/questions-fr.json"
     case "en":
-      return "../questions.json"
+      return "./json/questions-en.json"
     default: //de
-      return "../questions.json"
+      return "./json/questions-de.json"
   }
 }
 

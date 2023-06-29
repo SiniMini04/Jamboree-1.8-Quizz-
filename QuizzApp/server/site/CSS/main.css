@@ -157,5 +157,7 @@ form button:hover{
   }
   form button{
     width: auto;
+    animation: none !important;
+    transition: none !important;
   }
 }
