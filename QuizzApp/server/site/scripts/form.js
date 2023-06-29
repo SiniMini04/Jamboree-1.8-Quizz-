@@ -3,7 +3,7 @@ let buttonlabel = "Nächste Frage";
 
 //Create general variables
 let question = 0;
-const winpercentage = 0.9;
+const winpercentage = 0.75;
 
 //Create Environment for Questions
 const form = document.getElementsByTagName("form");
@@ -34,7 +34,6 @@ function makeQuestion(data) {
 
     const pointstowin = (data.length - 1) * winpercentage;
 
-
     if (points >= pointstowin) {
       winpage();
     } else {
@@ -56,25 +55,25 @@ function makeQuestion(data) {
     }
     //Create Button
     const button = document.createElement("button");
-    button.setAttribute('id', 'nextBTN')
-    switch (lang){
+    button.setAttribute("id", "nextBTN");
+    switch (lang) {
       case "it":
-        buttonlabel = "Prossima domanda"
-        break
+        buttonlabel = "Prossima domanda";
+        break;
       case "fr":
-        buttonlabel = "Question suivante"
-        break
+        buttonlabel = "Question suivante";
+        break;
       case "en":
-        buttonlabel = "Next question"
-        break
+        buttonlabel = "Next question";
+        break;
       default: //de
-        buttonlabel = "Nächste Frage"
-        break
+        buttonlabel = "Nächste Frage";
+        break;
     }
     button.textContent = buttonlabel;
     form[0].appendChild(button);
 
-//When button clicked
+    //When button clicked
     button.addEventListener("click", nextquestion);
 
     question++;
@@ -83,7 +82,7 @@ function makeQuestion(data) {
 
 function nextquestion(e) {
   e.preventDefault();
-  e.target.remove()
+  e.target.remove();
   getanswerdata(question).finally(() => {
     radioboxdiv.innerHTML = "";
     generatequestion();
@@ -96,7 +95,7 @@ function fouranswers(content1, content2, content3, content4) {
   radio1.setAttribute("type", "radio");
   radio1.setAttribute("id", "answer1");
   radio1.setAttribute("name", "response");
-  radio1.setAttribute("checked", true)
+  radio1.setAttribute("checked", true);
 
   const radio2 = document.createElement("input");
   radio2.setAttribute("type", "radio");
@@ -158,9 +157,9 @@ function fiveanswers(content1, content2, content3, content4, content5) {
 
   //console.log(question)
   //if (question === 0) {
-    radioboxdiv.appendChild(radio5);
-    radioboxdiv.appendChild(lable5);
-    radioboxdiv.appendChild(document.createElement("br"));
+  radioboxdiv.appendChild(radio5);
+  radioboxdiv.appendChild(lable5);
+  radioboxdiv.appendChild(document.createElement("br"));
   //}
 
   lable5.textContent = content5;
