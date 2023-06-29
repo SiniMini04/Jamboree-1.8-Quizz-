@@ -12,6 +12,7 @@ header {
   background-size: cover;
   min-height: 50px;
   background-position: center;
+  height: 15vh;
 }
 nav {
   background-color: transparent;
@@ -35,31 +36,21 @@ nav ul li {
   align-items: center;
   padding: auto;
 }
-form h2 {
-  width: 100%;
-}
+
 #page-container {
   position: relative;
   /*min-height: 100vh;*/
   padding: 2vmin;
 }
 #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
+  padding-bottom: 2.5rem; /* Footer height */
 }
-#radioboxdiv {
-  display: block;
-  margin: auto;
-  text-align: left;
-}
-#radioboxdiv input[type="radio"] {
-  margin-left: 3vw;
-  margin-right: 3vw;
-}
-footer{
+
+footer {
   /*display: flex;
   flex-direction: column;
   justify-content: space-evenly;*/
-  padding: 2rem ;
+  padding: 2rem;
   margin-top: auto;
   margin-right: auto;
   margin-left: auto;
@@ -77,32 +68,32 @@ footer{
   overflow: hidden;
   word-break: break-word;
 }
-footer a{
-  color:white;
+footer a {
+  color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 22px;
   text-decoration: none;
   hyphens: manual;
 }
-footer a:last-child{
+footer a:last-child {
   font-weight: 200;
   font-size: 15px;
 }
-footer ul{
+footer ul {
   list-style: none;
   display: flex;
   padding: 0;
 }
-footer ul li{
-  padding-right:4vmin;
+footer ul li {
+  padding-right: 4vmin;
 }
-footer svg{
+footer svg {
   height: 25px;
   width: 25px;
 }
-form button{
-  width:50%;
+button {
+  width: 25%;
   background-color: #cc7e4d;
   color: #ffffff;
   border-color: #ffffff;
@@ -119,7 +110,7 @@ form button{
   margin-top: 20px;
   white-space: nowrap;
 }
-form button:hover{
+button:hover {
   animation: linear 250ms button;
   background: white;
   color: #cc7e4d;
@@ -127,34 +118,55 @@ form button:hover{
 }
 
 @keyframes button {
-  50%{
+  50% {
     width: 40%;
   }
 }
 
-@media (max-width:470px) {
-  footer{
+@media (max-width: 470px) {
+  footer {
     word-break: break-word;
     padding: 0;
     width: 100vw;
     margin: 0;
     bottom: 0;
-    height: 200px
+    height: 200px;
   }
-  footer div{
+  footer div {
     padding: 2vmax;
   }
-  nav{
+  nav {
     position: relative;
   }
-  nav ul{
+  nav ul {
     display: grid;
   }
-  #page-container{
+  #page-container {
     padding: 3vmax;
     height: calc(100vh - 200px);
   }
-  form button{
+  button {
     width: auto;
   }
+}
+p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 25%;
 }
