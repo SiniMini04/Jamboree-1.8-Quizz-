@@ -21,7 +21,7 @@ function checkcode(event) {
   if (code.length != 9) {
     h1.innerHTML = "Please check if the Code is entered correctly!";
   } else {
-    fetch("http://127.0.0.1:3001/checkCode/" + code, {
+    fetch("/checkCode/" + code, {
       headers: {
         "Content-Type": "application/json",
       },
