@@ -148,6 +148,35 @@ button:hover {
   button {
     width: auto;
   }
+  footer{
+    word-break: break-word;
+    padding: 0;
+    width: 100vw;
+    margin: 0;
+    bottom: 0;
+    height: 200px
+  }
+  footer div{
+    padding: 2vmax;
+  }
+  nav{
+    position: relative;
+  }
+  nav ul{
+    display: grid;
+  }
+  #page-container{
+    padding: 3vmax;
+    height: calc(100vh - 200px);
+  }
+  form button{
+    width: auto;
+    animation: none !important;
+    transition: none !important;
+  }
+  header{
+    background-position-x: 12%;
+  }
 }
 p {
   font-size: 18px;
