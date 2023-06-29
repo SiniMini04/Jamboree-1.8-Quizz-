@@ -148,8 +148,8 @@ form button:hover{
   nav{
     position: relative;
   }
-  nav ul li{
-    padding: 3vw;
+  nav ul{
+    display: grid;
   }
   #page-container{
     padding: 3vmax;
@@ -159,8 +159,5 @@ form button:hover{
     width: auto;
     animation: none !important;
     transition: none !important;
-  }
-  header{
-    background-position-x: 12%;
   }
 }

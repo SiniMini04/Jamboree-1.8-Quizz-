@@ -89,6 +89,7 @@ async function deletcode(wincode) {
 
 async function writeindb(wincode) {
   const { MongoClient } = require("mongodb");
+
   const uri =
     "mongodb+srv://SinanM:WU9G3Cat3Qt9qwcu@codes.10bnqin.mongodb.net/test";
 
@@ -100,10 +101,9 @@ async function writeindb(wincode) {
     const query = { code: wincode };
     const code = await collection.insertOne(query);
     console.log(code);
+  } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
-  }catch (e){
-
   }
 }
 
