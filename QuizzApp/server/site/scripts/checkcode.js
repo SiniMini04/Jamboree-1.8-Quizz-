@@ -12,16 +12,18 @@ function checkcode(event) {
     event.target
   );
 
+  const StudID = document.getElementById("studId").value;
   const code = document.getElementById("code").value;
   const h1 = document.querySelector("h1");
   h1.innerHTML = "";
 
+  console.log(StudID);
   console.log(code);
 
   if (code.length != 9) {
     h1.innerHTML = "Please check if the Code is entered correctly!";
   } else {
-    fetch("/checkCode/" + code, {
+    fetch("/checkCode/" + code + "/" + StudID, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -29,14 +31,17 @@ function checkcode(event) {
       mode: "cors",
     })
       .then((doc) => doc.text())
-      .then((res) => {
-        console.log(res);
+      .then((response) => {
+        console.log(response);
 
-        if (res === "true") {
+        if (response === "0") {
           h1.textContent = "Code valid!";
-        }
-        if (res === "false") {
+        } else if (response === "1") {
           h1.textContent = "Code not valid!";
+        } else if (response === "2") {
+          h1.textContent = "Participant already got his prize!";
+        } else {
+          h1.textContent = "Unknown response: " + response;
         }
       });
   }

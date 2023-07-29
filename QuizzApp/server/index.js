@@ -14,27 +14,74 @@ app.use(express.urlencoded({ limit: "5mb" })); //sets data limit of parsing in u
 app.use(express.static(path.join(__dirname, "site")));
 
 app.post("/writeToDb", (req, res) => {
-  writeindb(req.body.code);
+  writecodeindb(req.body.code);
   res.send({
     code: req.body.code,
   });
 });
 
-app.get("/checkCode/:id", async (req, res) => {
-  let response = await checkcode(req.params.id);
-  console.log(response[0]);
+app.get("/checkCode/:code/:id", async (req, res) => {
+  let responseCode = await checkcode(req.params.code);
+  let responseID = await checkId(req.params.id);
+  console.log(responseCode[0]);
+  console.log(responseID);
 
-  if (response[0] == true) {
-    deletcode(response[1]);
+  // 0 Code ok    ID ok
+  // 1 Code x     ID ok
+  // 2 Code x/ok  ID x
+
+  if (responseCode[0] == true && responseID == false) {
+    deletcode(responseCode[1]);
+    writeidindb(req.params.id);
+    res.send("0");
+    console.log("send");
   }
-  res.send(response[0]);
+  if (responseCode[0] == false && responseID == false) {
+    res.send("1");
+    console.log("send");
+  } else if (responseID == true) {
+    res.send("2");
+    console.log("send");
+  }
 });
+
+async function checkId(ID) {
+  const { MongoClient } = require("mongodb");
+
+  const uri =
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
+
+  const client = new MongoClient(uri);
+  try {
+    let answer;
+
+    await client.connect();
+
+    const database = client.db("Codes");
+    const collection = database.collection("ParticipantID");
+
+    const query = { id: ID };
+    const result = await collection.findOne(query);
+    console.log(result);
+
+    if (result) {
+      answer = true;
+    } else {
+      answer = false;
+    }
+
+    return answer;
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
 
 async function checkcode(wincode) {
   const { MongoClient } = require("mongodb");
 
   const uri =
-    "mongodb+srv://SinanM:WU9G3Cat3Qt9qwcu@codes.10bnqin.mongodb.net/test";
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
 
   const client = new MongoClient(uri);
   try {
@@ -69,7 +116,7 @@ async function deletcode(wincode) {
   const { MongoClient } = require("mongodb");
 
   const uri =
-    "mongodb+srv://SinanM:WU9G3Cat3Qt9qwcu@codes.10bnqin.mongodb.net/test";
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
 
   const client = new MongoClient(uri);
   try {
@@ -87,10 +134,10 @@ async function deletcode(wincode) {
   }
 }
 
-async function writeindb(wincode) {
+async function writecodeindb(wincode) {
   const { MongoClient } = require("mongodb");
   const uri =
-    "mongodb+srv://SinanM:WU9G3Cat3Qt9qwcu@codes.10bnqin.mongodb.net/test";
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
 
   const client = new MongoClient(uri);
   try {
@@ -102,9 +149,25 @@ async function writeindb(wincode) {
     console.log(code);
     // Ensures that the client will close when you finish/error
     await client.close();
-  }catch (e){
+  } catch (e) {}
+}
 
-  }
+async function writeidindb(id) {
+  const { MongoClient } = require("mongodb");
+  const uri =
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
+
+  const client = new MongoClient(uri);
+  try {
+    const database = client.db("Codes");
+    const collection = database.collection("ParticipantID");
+
+    const query = { id: id };
+    const ID = await collection.insertOne(query);
+    console.log(ID);
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  } catch (e) {}
 }
 
 const listener = app.listen("3000", () => {
