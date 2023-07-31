@@ -32,9 +32,10 @@ nav ul li {
   float: right;
 }
 #div {
-  display: flex;
+  display: block;
   align-items: center;
   padding: auto;
+  justify-content: center;
 }
 form h2 {
   width: 100%;
@@ -50,7 +51,9 @@ form h2 {
 #radioboxdiv {
   display: block;
   margin: auto;
+  padding-left: 28%;
   text-align: left;
+  align-self: center;
 }
 #radioboxdiv input[type="radio"] {
   margin-left: 3vw;

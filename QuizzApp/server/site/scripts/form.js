@@ -11,11 +11,9 @@ const h = document.createElement("h2");
 const radioboxdiv = document.createElement("div");
 radioboxdiv.setAttribute("id", "radioboxdiv");
 
-form[0].insertBefore(h, document.getElementById("div"));
-document.getElementById("div").appendChild(radioboxdiv);
-
-// Call first Function
-generatequestion();
+form[0].insertBefore(h, div);
+//Gather the nececary Informations from the User
+getdata();
 
 //Functions to get Datas from .json file
 function generatequestion() {
@@ -30,12 +28,29 @@ function generatequestion() {
 //function to create questions
 function makeQuestion(data) {
   if (data[question].question === "END") {
-    console.log("Ende");
-
     const pointstowin = (data.length - 1) * winpercentage;
 
-    if (points >= pointstowin) {
-      winpage();
+    if (points >= pointstowin && ISTorParticipant === "IST") {
+      fetch("/getcodes/", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "get",
+        mode: "cors",
+      })
+        .then((doc) => doc.text())
+        .then((response) => {
+          console.log(response);
+          if (parseInt(response) <= 42) {
+            winpageIST();
+          } else {
+            loosepage();
+          }
+        });
+
+      winpageIST();
+    } else if (points >= pointstowin && ISTorParticipant === "Troup") {
+      winpageTrupp();
     } else {
       loosepage();
     }

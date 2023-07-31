@@ -10,12 +10,14 @@ app.use(
   })
 );
 app.use(express.json({ limit: "5mb" })); //sets data limit of parsing in body to 50mb //to manage the parsing of the body from react app
-app.use(express.urlencoded({ limit: "5mb" })); //sets data limit of parsing in url to 50mb
+app.use(express.urlencoded()); //sets data limit of parsing in url to 50mb
 app.use(express.static(path.join(__dirname, "site")));
 
-app.post("/writeToDb", (req, res) => {
-  writecodeindb(req.body.code);
+app.post("/writeDataToDb", (req, res) => {
+  writecodeindb(req.body.participant, req.body.id, req.body.code);
   res.send({
+    participant: req.body.participant,
+    id: req.body.id,
     code: req.body.code,
   });
 });
@@ -44,6 +46,45 @@ app.get("/checkCode/:code/:id", async (req, res) => {
     console.log("send");
   }
 });
+
+app.get("/getcodes/", async (req, res) => {
+  let codes = await getcodes();
+
+  res.send(codes.toString());
+});
+
+async function getcodes() {
+  const { MongoClient } = require("mongodb");
+
+  const uri =
+    "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
+
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+
+    const database = client.db("Codes");
+    const collection = database.collection("Codes");
+
+    const query = {
+      code: { $ne: null }, // Filters out documents where the "code" field is not null
+    };
+
+    const codes = await collection.find(query).toArray();
+    let count = 0;
+    for (i = 0; i < codes.length; i++) {
+      if (codes[i].code !== "") {
+        count++;
+      }
+    }
+    console.log(count);
+
+    return count;
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
 
 async function checkId(ID) {
   const { MongoClient } = require("mongodb");
@@ -134,7 +175,7 @@ async function deletcode(wincode) {
   }
 }
 
-async function writecodeindb(wincode) {
+async function writecodeindb(participant, id, wincode) {
   const { MongoClient } = require("mongodb");
   const uri =
     "mongodb+srv://SinanM:TBrVZIEEv84WhC6Q@codes.coft2ps.mongodb.net/Codes";
@@ -144,7 +185,11 @@ async function writecodeindb(wincode) {
     const database = client.db("Codes");
     const collection = database.collection("Codes");
 
-    const query = { code: wincode };
+    const query = {
+      participant: participant,
+      id: id,
+      code: wincode,
+    };
     const code = await collection.insertOne(query);
     console.log(code);
     // Ensures that the client will close when you finish/error

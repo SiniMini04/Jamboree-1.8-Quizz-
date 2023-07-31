@@ -1,10 +1,9 @@
 //General variables
 let points = 0;
-let lang = "de"
+let lang = "de";
 
 //Check if answer is right
 async function getanswerdata(question) {
-  question--;
   await fetch(url())
     .then((response) => response.json())
     .then((data) => {
@@ -13,29 +12,36 @@ async function getanswerdata(question) {
     .catch((error) => console.log(error));
 }
 
-function changeLang(sprache){
-  lang = sprache
+function changeLang(sprache) {
+  lang = sprache;
   question = 0;
   radioboxdiv.innerHTML = "";
-  document.getElementById('nextBTN').remove()
-  generatequestion()
-  console.log(lang)
+  if (document.getElementById("nextBTN")) {
+    document.getElementById("nextBTN").remove();
+    generatequestion();
+  } else {
+    document.getElementById("div").innerHTML = "";
+    getdata();
+    firstcheckbox = 0;
+  }
+  console.log(lang);
 }
-function url(){
-  switch (lang){
+function url() {
+  switch (lang) {
     case "it":
-      return "./json/questions-it.json" //TODO set jsons
+      return "./json/questions-it.json"; //TODO set jsons
     case "fr":
-      return "./json/questions-fr.json"
+      return "./json/questions-fr.json";
     case "en":
-      return "./json/questions-en.json"
+      return "./json/questions-en.json";
     default: //de
-      return "./json/questions-de.json"
+      return "./json/questions-de.json";
   }
 }
 
 //Check Radioboxes if checked matches with right answer
 function checkanswer(data, question) {
+  question--;
   const rightanswer = data[question].right;
   let answers = [];
 
