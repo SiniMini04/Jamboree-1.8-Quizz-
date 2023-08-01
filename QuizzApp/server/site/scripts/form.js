@@ -47,9 +47,7 @@ function makeQuestion(data) {
             loosepage();
           }
         });
-
-      winpageIST();
-    } else if (points >= pointstowin && ISTorParticipant === "Troup") {
+    } else if (points >= pointstowin && ISTorParticipant === "Trupp") {
       winpageTrupp();
     } else {
       loosepage();

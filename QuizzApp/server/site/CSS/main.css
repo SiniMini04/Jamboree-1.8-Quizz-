@@ -36,6 +36,7 @@ nav ul li {
   align-items: center;
   padding: auto;
   justify-content: center;
+  text-align: center;
 }
 form h2 {
   width: 100%;
@@ -50,14 +51,16 @@ form h2 {
 }
 #radioboxdiv {
   display: block;
-  margin: auto;
-  padding-left: 28%;
   text-align: left;
   align-self: center;
+  width: fit-content;
+  position: center;
+  margin: auto;
 }
 #radioboxdiv input[type="radio"] {
   margin-left: 3vw;
   margin-right: 3vw;
+  align-self: center;
 }
 footer {
   /*display: flex;
