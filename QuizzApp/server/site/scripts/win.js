@@ -86,6 +86,21 @@ function winpageTrupp() {
   form[0].appendChild(br);
   form[0].appendChild(p2);
 
+  let wincode = "3";
+
+  fetch("/writeDataToDb", {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "post",
+    mode: "cors",
+    body: JSON.stringify({
+      participant: ISTorParticipant,
+      id: ISTIDorTroupNr,
+      code: wincode,
+    }),
+  }).then((doc) => console.log(doc));
+
   switch (
     lang //TODO set winpage
   ) {
