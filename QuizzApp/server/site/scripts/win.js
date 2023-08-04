@@ -86,7 +86,7 @@ function winpageTrupp() {
   form[0].appendChild(br);
   form[0].appendChild(p2);
 
-  let wincode = "3";
+  let wincode = "";
 
   fetch("/writeDataToDb", {
     headers: {
